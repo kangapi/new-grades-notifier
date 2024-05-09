@@ -32,3 +32,5 @@ jobs:
             NTFY_AUTH=${{ secrets.NTFY_AUTH }}
             PASSWORD=${{ secrets.PASSWORD }}
             USERNAME=${{ secrets.USERNAME }}
+            NTFY_URL=${{ secrets.NTFY_URL }}
+            PRONOTE_URL=${{ secrets.PRONOTE_URL }}
