@@ -1,7 +1,7 @@
 version: '3.1' #format version for this docker compose file
 services:
   pronote:
-    build: .
+    image: ghcr.io/kangapi/new-grades-notifier:latest
     depends_on:
       - mongo
     environment:
