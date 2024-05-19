@@ -1,0 +1,19 @@
+version: '3.1' #format version for this docker compose file
+services:
+  pronote:
+    build: .
+    depends_on:
+      - mongo
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/pronote
+      - NTFY_AUTH=${NTFY_AUTH}
+      - PASSWORD=${PASSWORD}
+      - USERNAME=${USERNAME}
+      - NTFY_URL=${NTFY_URL}
+      - PRONOTE_URL=${PRONOTE_URL}
+      - RUN_EVERY=1
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    command: mongod
