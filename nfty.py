@@ -6,10 +6,10 @@ import requests
 auth = os.getenv("NTFY_AUTH")
 
 
-
 class Ntfy:
     def __init__(self):
         self.url = os.getenv("NTFY_URL")
+
     def send(self, title, content, tags, priority, topic):
         url = f"{self.url}/{topic}?title={title}&tags={tags}"
 
