@@ -54,6 +54,7 @@ You can also change the topic of the notification by modifying the `TOPIC` envir
 docker-compose up -d
 ```
 5. That's it! You will now receive a notification every time a new grade is available on Pronote.
+Make sure to follow the topic you chose on your ntfy client to receive the notifications.
 You can check the logs of the container by running:
 ``` bash
 docker-compose logs -f
