@@ -7,6 +7,8 @@ from db import *
 username = os.getenv("USERNAME")
 password = os.getenv("PASSWORD")
 
+topic = os.getenv("TOPIC")
+
 pronote = Pronote(username, password)
 db = DB("pronote", "grades")
 nfty = Ntfy()
@@ -31,4 +33,4 @@ else:
     for new_grade in new_grades:
         content = nfty.set_content(new_grade)
         nfty.send(f"{new_grade['grade']}/{new_grade['out_of']} {new_grade['subject']}", content, "books", "high",
-                  "grades")
+                  topic)

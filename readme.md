@@ -31,6 +31,7 @@ services:
       - NTFY_URL=${NTFY_URL}
       - PRONOTE_URL=${PRONOTE_URL}
       - RUN_EVERY=10
+      - TOPIC=grades
   mongo:
     image: mongo:latest
     ports:
@@ -46,6 +47,7 @@ NTFY_URL=your_ntfy_url
 PRONOTE_URL=your_pronote_url
 ```
 By default, the script will check for new grades every 10 minutes. You can change this value by modifying the `RUN_EVERY` environment variable.
+You can also change the topic of the notification by modifying the `TOPIC` environment variable.
 
 4. Run the following command to start the container:
 ``` bash

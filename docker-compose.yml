@@ -13,6 +13,7 @@ services:
       - NTFY_URL=${NTFY_URL}
       - PRONOTE_URL=${PRONOTE_URL}
       - RUN_EVERY=1
+      - TOPIC=grades
   mongo:
     image: mongo:latest
     ports:
