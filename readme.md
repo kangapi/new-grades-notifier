@@ -30,13 +30,20 @@ services:
       - USERNAME=${USERNAME}
       - NTFY_URL=${NTFY_URL}
       - PRONOTE_URL=${PRONOTE_URL}
-      - RUN_EVERY=10
+      - RUN_EVERY=1
       - TOPIC=grades
+    networks:
+      - internal_network
+
   mongo:
     image: mongo:latest
-    ports:
-      - "27017:27017"
     command: mongod
+    networks:
+      - internal_network
+
+networks:
+  internal_network:
+    driver: bridge
 ```
 3. Modify the environment variables in the `docker-compose.yml` or create a `.env` file with the following content:
 ``` env
